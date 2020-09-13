@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <form #searchform = "ngForm" (ngSubmit)="onSubmit(searchform.value)">
+                    <div class="form-group">
+                      <label for="searchInput">Search</label>
+                      <input type="text" #thing class="form-control" name="searchInput" id="searchInput" aria-describedby="searchHelp" placeholder="Enter Query" ngModel>
+                      <small id="searchHelp" class="form-text text-muted">The most accessed results will be displayed on top.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table table-dark">
+                <thead>
+                    <th>Title</th>
+                    <th>Link</th>
+                    <th>Votes</th>
+                </thead>
+                <tr *ngFor = "let item of searchResults.items">
+                    <td> {{item.title}} </td>
+                    <td> {{item.link}} </td>
+
+                    <td> 
+                        <a class="btn btn-default" (click)="onEdit(emp)" style="color: white;">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                        <a class="btn btn-default" (click)="onDelete(emp._id,employeeForm)" style="color: white;">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+            </div>
+        </div>
+    </div>
+</div>
