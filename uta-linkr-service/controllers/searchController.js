@@ -26,8 +26,8 @@ async function runSample(queryIn) {
   }
     const options = {
       q: queryIn,
-      apiKey: 'AIzaSyCGshQ76NE1O9rpbWC_iDctxEYLxiKez58',
-      cx: '8eaf33105eaf68d1f',
+      apiKey: 'key',
+      cx: 'cx',
     };
     const res = await customsearch.cse.list({
       cx: options.cx,
